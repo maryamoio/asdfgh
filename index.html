@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>زوم روی تصویر با کلیک</title>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    img {
+      width: 400px;
+      height: auto;
+      transition: transform 0.3s ease; /* انیمیشن نرم برای زوم */
+      cursor: zoom-in;
+    }
+
+    img.zoomed {
+      transform: scale(2); /* مقدار زوم (۲ برابر) */
+      cursor: zoom-out;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>روی تصویر کلیک کن تا زوم شود 🔍</h2>
+  <img id="zoomImage" src="sample.jpg" alt="تصویر نمونه">
+
+  <script>
+    const img = document.getElementById("zoomImage");
+    img.addEventListener("click", () => {
+      img.classList.toggle("zoomed");
+    });
+  </script>
+</body>
+</html>
